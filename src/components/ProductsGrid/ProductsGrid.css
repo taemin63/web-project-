@@ -1,0 +1,142 @@
+.pg-container {
+    padding: 24px clamp(16px, 4vw, 80px);
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.pg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.pg-card {
+    background: #f2f4f7;
+    border-radius: 14px;
+    overflow: hidden;
+    --mediaW: 70%;
+}
+
+.pg-imageWrap {
+    position: relative;
+    background: white;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; 
+}
+
+
+.pg-nameOverlay {
+    position: absolute;
+    left: calc((100% - var(--mediaW)) / 2);
+    bottom: 2px;
+
+    padding: 2px;
+    border-radius: 10px;
+    color: black;
+    font-size: 18px;
+    letter-spacing: -0.2px;
+}
+
+.pg-meta {
+    padding: 5px calc((100% - var(--mediaW)) / 2) 14px; 
+    background: #fff;
+}
+
+.pg-priceRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+.pg-rightControls {
+    display: flex;
+    align-items: center;
+}
+
+.pg-price {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.pg-qtySelect {
+    width: 110px;
+    height: 32px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 10px;
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pg-titleBar {
+    margin: 8px 0 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;  
+}
+
+.pg-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    margin: 0;
+}
+
+.pg-subTitle {
+    font-weight: 400;
+    margin: 0;
+    font-size: 16px;
+    color: black;
+}
+
+.pg-qtySelect:focus {
+    outline: none;
+    border-color: #111827;
+}
+
+.pg-premiumBadge{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.9);
+    color: yellow;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
+.pg-mediaBox{
+    position: relative;     
+    width: var(--mediaW, 70%);
+}
+
+@media (max-width: 980px) {
+    .pg-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .pg-grid {
+        grid-template-columns: 1fr;
+    }
+}

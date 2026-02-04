@@ -1,9 +1,9 @@
-import ProductsGrid from "../components/ProductsGrid/ProductsGrid";
+import RomanticGrid from "../components/ProductsGrid/RomanticGrid";
 
 export default function Romantic () {
     return (
         <>
-        <ProductsGrid />
+        <RomanticGrid />
         </>
     )
 }

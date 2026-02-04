@@ -218,32 +218,21 @@
 }
 
 .phone-frame {
-  max-width: 375px;
+  max-width: 500px;
   margin: 0 auto;
-  background: white;
-  border: 12px solid #2d2d2d;
-  border-radius: 32px;
-  padding: 1.5rem;
+  background: rgb(243, 242, 242);
+  border: 5px solid #eee9e9;
+  border-radius: 5px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   position: relative;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 24px;
-  background: #2d2d2d;
-  border-radius: 0 0 16px 16px;
+  /* background-image: url(../../public/images/wil2.jpg) */
 }
 
 .invitation-preview {
   background: var(--secondary);
   min-height: 600px;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
+  border-radius: 5px;
+  padding: 5rem 1.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -256,26 +245,50 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 200px;
-  background: linear-gradient(180deg, rgba(212, 163, 115, 0.1) 0%, transparent 100%);
+  height: 100%;
+  /* background: linear-gradient(180deg, rgba(212, 115, 204, 0.1) 0%, transparent 100%); */
   pointer-events: none;
 }
 
 /* 테마별 스타일 */
 .invitation-preview.theme-classic {
-  background: linear-gradient(135deg, #fdfbf7 0%, #f8f5f1 100%);
+  background: radial-gradient(
+  ellipse,
+  rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.88) 32%,
+    rgba(255, 255, 255, 0.55) 55%,
+    rgba(255, 255, 255, 0) 78%
+);
 }
 
 .invitation-preview.theme-modern {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: radial-gradient(
+  ellipse,
+  rgba(255, 250, 252, 0.95) 0%, /* 거의 흰색 */
+    rgba(255, 235, 242, 0.88) 32%, /* 아주 연핑크 */
+    rgba(255, 220, 232, 0.55) 55%,
+    rgba(255, 220, 232, 0) 78%
+);
 }
 
 .invitation-preview.theme-elegant {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background: radial-gradient(
+  ellipse,
+  rgba(250, 252, 255, 0.95) 0%, /* 거의 흰색 */
+    rgba(234, 244, 255, 0.88) 32%, /* 아주 연블루 */
+    rgba(215, 233, 255, 0.55) 55%,
+    rgba(215, 233, 255, 0) 78%
+);
 }
 
 .invitation-preview.theme-minimal {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background: radial-gradient(
+  ellipse,
+ rgba(255, 253, 250, 0.95) 0%, /* 거의 흰색 */
+    rgba(255, 242, 228, 0.88) 32%, /* 아주 연오렌지 */
+    rgba(255, 225, 200, 0.55) 55%,
+    rgba(255, 225, 200, 0) 78%
+);
 }
 
 .preview-date {

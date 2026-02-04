@@ -3,6 +3,7 @@
     box-sizing: border-box;
     max-width: 1600px;
     margin: 0 auto;
+
 }
 
 .pg-grid {
@@ -26,15 +27,16 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
 }
 
 .pg-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: contain; 
-}
 
+}
 
 .pg-nameOverlay {
     position: absolute;
@@ -79,6 +81,7 @@
     background: #fff;
     font-size: 12px;
     cursor: pointer;
+    color: black;
 }
 
 .pg-titleBar {

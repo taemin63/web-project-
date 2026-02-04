@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import "./ProductsGrid.css";
+import { useNavigate } from "react-router-dom";
 
 const QTY_OPTIONS = [50, 100, 200, 450, 700, 1000];
 
@@ -20,18 +21,38 @@ const PRODUCTS = [
 
 function ProductCard({ product, isFirst }) {
   const [qty, setQty] = React.useState(50);
+  const navigate = useNavigate();
 
   const price = useMemo(() => {
     const raw = product.basePrice * (qty / 50);
     return Math.round(raw / 100) * 100;
   }, [product.basePrice, qty]);
 
+  const goMakeInvitation = () => {
+    navigate("/invitation/maker", {
+      state: {
+        product: {
+          id: product.id,
+          image: product.image,
+          name: product.name,
+          basePrice: product.basePrice,
+        },
+      },
+    });
+  };
+
   return (
     <div className="pg-card">
       <div className="pg-imageWrap">
         <div className="pg-mediaBox">
           {isFirst && <div className="pg-premiumBadge">프리미엄</div>}
-          <img className="pg-image" src={product.image} alt={product.name} />
+          <img
+            className="pg-image"
+            src={product.image}
+            alt={product.name}
+            onClick={goMakeInvitation}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="pg-nameOverlay">{product.name}</div>
       </div>

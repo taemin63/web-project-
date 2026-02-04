@@ -10,10 +10,11 @@ import Login from './Login';
 import InvitationMaker from "./components/InvitationMaker";
 
 import Classic from "./pages/Classic";
-import Event from "./components/Event/Event";
 import Modern from "./pages/Modern";
 import Natural from "./pages/Natural";
 import Romantic from "./pages/Romantic";
+import Event from "./components/Event/Event";
+
 import ScroolTopButton from "./ScroolTopButton";
 
 export default function App() {
@@ -32,17 +33,17 @@ export default function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/classic" element={<Classic />} />
-        <Route path="/event" element={<Event />} />
         <Route path="/modern" element={<Modern />} />
         <Route path="/natural" element={<Natural />} />
         <Route path="/romantic" element={<Romantic />} />
+        <Route path="/event" element={<Event />} />
         
         <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
         <Route path="/invitation/maker" element={<InvitationMaker isLogin={isLogin} />} />
        
       </Routes>
       
-        <ScroolTopButton />
+      <ScroolTopButton />
 
       <Footer />
     </BrowserRouter>
@@ -52,11 +53,11 @@ export default function App() {
 // Home 컴포넌트
 function Home() {
   return (
-    <div>
+    <>
       <SlideBanner />
       <Products />
       <Event />
-    </div>
+    </>
   );
 }
 

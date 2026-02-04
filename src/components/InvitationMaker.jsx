@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './InvitationMaker.css';
+import { useLocation } from "react-router-dom";
 
 export default function InvitationMaker({ isLogin, setIsLogin }) {
+  const location = useLocation();
+
+  const productImage =
+    location.state?.product?.image || "/images/wil2.jpg";
+  
   const [formData, setFormData] = useState({
     date: '2026-02-02',
     time: '10:30',
@@ -97,10 +103,10 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
   const formattedTime = formatTime(formData.time);
 
   const themes = [
-    { id: 'classic', name: '기본' },
-    { id: 'modern', name: '모던' },
-    { id: 'elegant', name: '우아함' },
-    { id: 'minimal', name: '미니멀' }
+    { id: 'classic', name: '베이지' },
+    { id: 'modern', name: '블루' },
+    { id: 'elegant', name: '오렌지' },
+    { id: 'minimal', name: '화이트' }
   ];
 
   return (
@@ -274,9 +280,15 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
           {/* 미리보기 섹션 */}
           <div className="preview-section">
             <h2 className="section-title">미리보기</h2>
-            
-            <div className="phone-frame">
-              <div className="phone-notch"></div>
+              <div
+                className="phone-frame"
+                style={{
+                  backgroundImage: `url(${productImage})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
               <div className={`invitation-preview theme-${formData.theme}`}>
                 <div className="preview-date">{formattedDate}</div>
                 <div className="preview-day">{dayName}</div>

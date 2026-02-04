@@ -16,11 +16,11 @@ export default function Header({ isLogin, setIsLogin }) {
           </Link>
           
           <ul className="list">
-            <li><Link to={"/card/card"}>Classic</Link></li>
-            <li><Link to={"/card/card"}>Modern</Link></li>
-            <li><Link to={"/card/card"}>Natural</Link></li>
-            <li><Link to={"/card/card"}>Romantic</Link></li>
-            <li><Link to={"/card/card"}>Event🎉</Link></li>
+            <li><Link to = "/classic">Classic</Link></li>
+            <li><Link to="/modern">Modern</Link></li>
+            <li><Link to="/natural">Natural</Link></li>
+            <li><Link to="/romantic">Romantic</Link></li>
+            <li><Link to="/event">Event🎉</Link></li>
           </ul>
           
         </div>

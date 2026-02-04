@@ -1,5 +1,6 @@
 import "./Products.css";
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const bestPickSlides = [
   {
@@ -50,6 +51,37 @@ const SLIDE_GAP = 24;
 const STEP = SLIDE_WIDTH + SLIDE_GAP;
 
 export default function Products() {
+  const navigate = useNavigate();
+
+  const handleMakeClick = (e, slide) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const token = localStorage.getItem("token");
+
+  const payload = {
+    productId: slide.id,
+    image: slide.src,
+    title: slide.title,
+  };
+
+  if (!token) {
+    navigate("/login", {
+      state: {
+        redirectTo: "/invitation/maker",
+        product: payload,
+      },
+    });
+  } else {
+    navigate("/invitation/maker", {
+      state: {
+        product: payload,
+      },
+    });
+  }
+};
+
+
   const slides = bestPickSlides;
   const total = slides.length;
   const extendedSlides = useMemo(() => [...slides, ...slides], [slides]);
@@ -126,12 +158,16 @@ export default function Products() {
             {extendedSlides.map((s, i) => (
               <div className="carousel-slide" key={`${s.id}-${i}`}>
                 <a
-                  
                   className="carousel-card"
                   href={s.href}
                   onClick={(e) => handleProductClick(e, s.href)}
                   aria-label={`${s.title} 구입 페이지 이동`}>
-                  <img src={s.src} alt={s.alt} draggable="false" />
+                  <img 
+                    src={s.src} 
+                    alt={s.alt} 
+                    draggable="false" 
+                    onClick={(e) => handleMakeClick(e, s)}
+                  />
                   <div className="product-overlay">
                     <div className="product-title">{s.title}</div>
                     <div className="product-desc">{s.desc}</div>

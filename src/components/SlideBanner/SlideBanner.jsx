@@ -1,19 +1,8 @@
 import "./SlideBanner.css";
 import { useEffect, useRef, useState } from "react";
-import { redirect, useLocation, useNavigate } from "react-router-dom";
 
-export default function SlideBanner() {
-  const navigate = useNavigate()
-  const handleMakeClick = () => {
-  const token = localStorage.getItem("token");
+export default function SlideBanner({isLogin}) {
   
-    if (!token) {
-      navigate("/login");
-    } else {
-      navigate("/invitation/maker");
-    }
-  }
-
   const banners = [
     {
       id: 0,
@@ -98,9 +87,9 @@ export default function SlideBanner() {
             <div className="ctaWrap">
               <button
                 className="ctaBtn primary"
-                onClick={handleMakeClick}
+                
                 type="button"
-              
+                onClick={() => onClickCTA(banner.link1)}
               >
                 {banner.cta1}
               </button>

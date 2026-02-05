@@ -16,7 +16,9 @@ export default function Event() {
                     <p className="event-desc">
                         지금 가입하면 카드 제작 30% 할인 쿠폰을 드려요!
                     </p>
-                    <button className="event-button">
+                    <button
+                        className="event-button"
+                        onClick={() => alert("참여 완료!")}>
                         이벤트 참여하기
                     </button>
                 </div>

@@ -127,6 +127,91 @@
     pointer-events: none;
 }
 
+.pg-badge--premium { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.9);
+    color: yellow;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
+.pg-badge--steady  { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgb(152, 251, 226);
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
+.pg-badge--select  { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: palevioletred;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
+.pg-badge--new     { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: red;
+    color: yellow;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
+.pg-badge--best    { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgb(173, 135, 235);
+    color: greenyellow;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+
+    pointer-events: none;
+}
+
 .pg-mediaBox{
     position: relative;     
     width: 100%;

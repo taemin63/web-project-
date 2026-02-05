@@ -18,7 +18,7 @@ import Event from "./components/Event/Event";
 import ScroolTopButton from "./ScroolTopButton";
 
 export default function App() {
- 
+
   const [isLogin, setIsLogin] = useState(() => {
     return !!localStorage.getItem('token');
   });
@@ -40,7 +40,7 @@ export default function App() {
         
         <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
         <Route path="/invitation/maker" element={<InvitationMaker isLogin={isLogin} />} />
-       
+      
       </Routes>
       
       <ScroolTopButton />
@@ -56,7 +56,6 @@ function Home() {
     <>
       <SlideBanner />
       <Products />
-      <Event />
     </>
   );
 }

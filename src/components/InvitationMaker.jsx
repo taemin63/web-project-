@@ -103,10 +103,10 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
   const formattedTime = formatTime(formData.time);
 
   const themes = [
-    { id: 'classic', name: '베이지' },
-    { id: 'modern', name: '블루' },
-    { id: 'elegant', name: '오렌지' },
-    { id: 'minimal', name: '화이트' }
+    { id: 'classic', name: '화이트' },
+    { id: 'modern', name: '핑크' },
+    { id: 'elegant', name: '블루' },
+    { id: 'minimal', name: '베이지' }
   ];
 
   return (

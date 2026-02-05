@@ -1,26 +1,24 @@
 /* Login.css */
 
 .login-page {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #fdfbf7 0%, #f8f5f1 100%);
-  padding: 2rem;
+  padding: 5rem;
 }
 
 .login-container {
   background: white;
-  padding: 3rem;
+  padding: 5rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
   max-width: 420px;
-  animation: fadeIn 0.6s ease;
 }
 
 .login-title {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: '맑은 고딕';
   font-size: 2rem;
   font-weight: 700;
   color: #2d2d2d;
@@ -48,7 +46,7 @@
 }
 
 .form-group label {
-  font-family: 'Noto Serif KR', serif;
+  font-family: '맑은 고딕';
   font-size: 0.9rem;
   font-weight: 600;
   color: #2d2d2d;
@@ -61,7 +59,6 @@
   color: #000000;
   font-family: 'Noto Serif KR', serif;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
   background: #fafafa;
 }
 
@@ -79,7 +76,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  font-family: 'Noto Serif KR', serif;
+  font-family: '맑은 고딕';
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -88,45 +85,22 @@
 
 .login-button:hover {
   background: #c89563;
-  transform: translateY(-2px);
+  transform: translateY(1px);
   box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
 }
 
 .login-footer {
   margin-top: 2rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
+  gap: 1.2rem;
 }
 
 .login-footer a {
   color: #d4a373;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
 }
 
 .login-footer a:hover {
-  color: #c89563;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  .login-container {
-    padding: 2rem;
-  }
-
-  .login-title {
-    font-size: 1.6rem;
-  }
+  color: #ff8000;
 }

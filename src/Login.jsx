@@ -7,9 +7,7 @@ export default function Login({ setIsLogin }) {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-
+  const handleLogin = () => {
     if (email && password) {
       localStorage.setItem('token', 'dummy-token-12345');
       setIsLogin(true);

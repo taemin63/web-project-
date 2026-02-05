@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './InvitationMaker.css';
 import { useLocation } from "react-router-dom";
 
-export default function InvitationMaker({ isLogin, setIsLogin }) {
+export default function InvitationMaker() {
   const location = useLocation();
 
   const productImage =
-    location.state?.product?.image || "/images/wil2.jpg";
+    location.state?.product?.image;
   
   const [formData, setFormData] = useState({
     date: '2026-02-02',
@@ -22,7 +21,7 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
     message: `저희 두 사람이 사랑으로
 하나되는 자리에
 소중한 분들을 모시고자 합니다.
-
+    
 오셔서 축복해 주시면
 큰 기쁨으로 간직하겠습니다.`,
     theme: 'classic'
@@ -147,7 +146,7 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
                   type="text"
                   name="venue"
                   className="form-input"
-                  placeholder="예) 서울 강남구 웨딩홀"
+                  placeholder="장소"
                   value={formData.venue}
                   onChange={handleInputChange}
                 />
@@ -301,15 +300,23 @@ export default function InvitationMaker({ isLogin, setIsLogin }) {
                 <div className="preview-message">{formData.message}</div>
                 
                 <div className="preview-divider"></div>
-                
-                <div className="preview-names">
-                  <div className="preview-role">신랑</div>
-                  <div className="preview-name">{formData.groomName || '신랑 이름'}</div>
-                  <div className="preview-heart">♥</div>
-                  <div className="preview-role">신부</div>
-                  <div className="preview-name">{formData.brideName || '신부 이름'}</div>
+                <div className="preview-center">
+                  <div className="preview-names">
+                    <div className="preview-name">{formData.groomFather} </div>
+                    <div className='dot'> ● </div>
+                    <div className="preview-name">{formData.groomMother} </div>
+                    <div className="spacebar">의 장남 </div>
+                    <div className="preview-name">{formData.groomName || '신랑 성함'}</div>
+                  </div>
+                  
+                  <div className="preview-names">
+                    <div className="preview-name">{formData.brideFather} </div>
+                    <div className='dot'> ● </div>
+                    <div className="preview-name">{formData.brideMother} </div>
+                    <div className="spacebar">의 장녀 </div>
+                    <div className="preview-name">{formData.brideName || '신부 성함'}</div>
+                  </div>  
                 </div>
-                
                 <div className="preview-divider"></div>
                 
                 <div className="preview-details">

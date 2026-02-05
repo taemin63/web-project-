@@ -69,13 +69,12 @@
 }
 
 .logo1 {
-  width: 150px;
-  height: 100px;
-  padding: 0 30px;
-
-  display: flex;
-  align-items: center;
+  max-width: 230px;
   cursor: pointer;
+}
+
+.logo1 img {
+  display: inline-block;
 }
 
 .list a {

@@ -26,7 +26,7 @@ export default function SlideBanner({isLogin}) {
     },
     {
       id: 2,
-      image: "/bannerImage/banner3.jpg",
+      image: "/images/abc.jpg",
       title: "Natural Design",
       desc: "자연의 싱그럽고 따뜻한 느낌을 살려주는 청첩장 디자인",
       cta1: "상품목록 보기",
@@ -46,14 +46,14 @@ export default function SlideBanner({isLogin}) {
     },
   ];
   
-  const [current, setCurrent] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef(null);
 
   const startAuto = () => {
     if (intervalRef.current) return;
     intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % banners.length);
+      setActiveIndex((prev) => (prev + 1) % banners.length);
     }, 2000);
   };
 
@@ -65,9 +65,9 @@ export default function SlideBanner({isLogin}) {
   useEffect(() => {
     if (isPaused) return;
     startAuto();
-
+    
     return () => stopAuto();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // app02 언마운트제어에서 배운 부분(클린업함수=>유즈이펙트가 리턴하는 함수)
   }, [isPaused]);
 
   const onClickCTA = (link) => {
@@ -85,9 +85,9 @@ export default function SlideBanner({isLogin}) {
       {banners.map((banner, index) => (
         <div
           key={banner.id}
-          className={`slide ${index === current ? "active" : ""}`}
+          className={`slide ${index === activeIndex ? "active" : ""}`}
           style={{ backgroundImage: `url(${banner.image})` }}
-          aria-hidden={index !== current}
+          aria-hidden={index !== activeIndex}
         >
           <div className="overlay" />
           <div className="content">
@@ -120,10 +120,10 @@ export default function SlideBanner({isLogin}) {
         {banners.map((b, idx) => (
           <button
             key={b.id}
-            className={`dot ${idx === current ? "on" : ""}`}
+            className={`dot ${idx === activeIndex ? "on" : ""}`}
             onClick={(e) => {
               e.currentTarget.blur();
-              setCurrent(idx);}}
+              setActiveIndex(idx);}}
 
             type="button"
           />

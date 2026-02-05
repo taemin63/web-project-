@@ -302,17 +302,17 @@ export default function InvitationMaker() {
                 <div className="preview-divider"></div>
                 <div className="preview-center">
                   <div className="preview-names">
-                    <div className="preview-name">{formData.groomFather} </div>
+                    <div className="preview-name">{formData.groomFather || '아버지'} </div>
                     <div className='dot'> ● </div>
-                    <div className="preview-name">{formData.groomMother} </div>
+                    <div className="preview-name">{formData.groomMother || '어머니'} </div>
                     <div className="spacebar">의 장남 </div>
                     <div className="preview-name">{formData.groomName || '신랑 성함'}</div>
                   </div>
                   
                   <div className="preview-names">
-                    <div className="preview-name">{formData.brideFather} </div>
+                    <div className="preview-name">{formData.brideFather || '아버지'} </div>
                     <div className='dot'> ● </div>
-                    <div className="preview-name">{formData.brideMother} </div>
+                    <div className="preview-name">{formData.brideMother || '어머니'} </div>
                     <div className="spacebar">의 장녀 </div>
                     <div className="preview-name">{formData.brideName || '신부 성함'}</div>
                   </div>  

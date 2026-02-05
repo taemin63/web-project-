@@ -54,18 +54,19 @@
 }
 
 .list1 {
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: space-between;
-  gap : 40px;
-  padding: 0 ;
+  padding: 0;
   margin: 0;
+  
 }
 
 .list1 li {
-  display: inline-block; 
   list-style: none;
   cursor: pointer;
+  
+  width: 100px;
 }
 
 .logo1 {
@@ -87,4 +88,24 @@
 .list li:nth-child(5) a {
   color: #ff7878;
   font-weight: bold;
+}
+
+.search {
+  width: 300px;
+  padding: 0.5rem 0;
+  display: flex;
+
+  font-family: "맑은고딕";
+  border: 1px solid #e5ddd5;
+  border-radius: 20px;
+  color: #000000;
+  font-size: 1rem;
+  background: #ffffff;
+}
+
+.search:focus {
+  outline: none;
+  border-color: #d4a373;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.1);
 }

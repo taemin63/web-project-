@@ -26,7 +26,13 @@ export default function Header({ isLogin, setIsLogin }) {
         </div>
 
         <div className="right-group">
-          <ul className="list">
+          <input 
+            type="text"
+            name="search"
+            placeholder="  찾고 싶은 상품을 검색하시오"
+            className="search"
+          />
+          <ul className="list1">
             {isLogin ? (
               <li onClick={handleLogout} style={{ cursor: 'pointer' }}>로그아웃</li>
             ) : (

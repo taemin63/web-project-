@@ -29,11 +29,17 @@ export default function InvitationMaker() {
 
   // 저장된 데이터 불러오기
   useEffect(() => {
-    const saved = localStorage.getItem('weddingInvitation');
-    if (saved) {
+  const saved = localStorage.getItem('weddingInvitation');
+
+  if (saved && saved !== 'undefined') {
+    try {
       setFormData(JSON.parse(saved));
+    } catch (e) {
+      console.error('저장된 데이터 파싱 실패', e);
+      localStorage.removeItem('weddingInvitation');
     }
-  }, []);
+  }
+}, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
